@@ -1,0 +1,35 @@
+
+
+SET serveroutput ON;
+
+DECLARE 
+--DEFINCION DE VARIABLES
+    NumCamisetas NUMBER := 10 ;
+    MontoCamisetas NUMBER := 25;
+    
+    SubTotal NUMBER;
+    TotalPagar NUMBER;
+    impuesto NUMBER ;
+ 
+ 
+BEGIN
+    --VARIABLES
+    dbms_output.put_line ('El total de camisetas es:  ' || NumCamisetas);
+    dbms_output.put_line ('E costo de cada camiseta es: ' || MontoCamisetas);
+    
+    dbms_output.put_line ('===========================================');
+
+    --SUBTOTAL
+    SubTotal := (NumCamisetas * MontoCamisetas);
+    dbms_output.put_line ('El subtotal es: ' || SubTotal);
+    
+    --IMPUESTO 
+    impuesto := ( SubTotal * 0.15);
+    dbms_output.put_line ('El impuesto es: ' || impuesto);
+    
+    --TOTAL
+    TotalPagar :=  (SubTotal + impuesto);
+    dbms_output.put_line ('El total es: ' || TotalPagar);
+END;
+/
+    
